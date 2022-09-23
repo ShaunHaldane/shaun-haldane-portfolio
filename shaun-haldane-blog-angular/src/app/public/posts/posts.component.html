@@ -1,0 +1,18 @@
+<div class="container text-center break-text">
+    <h3><br></h3>
+    <h3>Articles</h3>
+    <h3><br></h3>
+    <div *ngFor="let p of posts">
+        <h5>{{p.title}}</h5>
+        <p><br></p>
+        <p><i>Posted: {{p.lastUpdated}}</i></p>
+        <a href="/posts/{{p.id}}" routerLink="/posts/{{p.id}}">Read Post</a>
+        <div *ngIf="showAdmin">
+            <p><br></p>
+            <a class="btn btn-warning mr-1" href="/edit-post/{{p.id}}" routerLink="/edit-post/{{p.id}}" >Edit</a>
+            <button class="btn btn-danger ml-1" (click)="deletePost(p.id)">Delete</button>
+        </div>
+        <h5><br></h5>
+        <hr>
+    </div>
+</div>

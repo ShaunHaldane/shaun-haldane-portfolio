@@ -1,0 +1,5 @@
+package com.shaunhaldane.shaunhaldanebloginitializr.model;
+
+public class ErrorDTO {
+
+}

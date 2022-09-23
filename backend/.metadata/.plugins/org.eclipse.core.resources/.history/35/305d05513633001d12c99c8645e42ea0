@@ -1,0 +1,5 @@
+package com.shaunhaldane.shaunhaldanebloginitializr.security;
+
+public class WebSecurityConfig {
+
+}

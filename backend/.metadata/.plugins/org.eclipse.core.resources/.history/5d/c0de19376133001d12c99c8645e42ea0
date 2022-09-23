@@ -1,0 +1,5 @@
+package com.shaunhaldane.shaunhaldanebloginitializr.service;
+
+public class CommentService {
+
+}

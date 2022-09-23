@@ -1,0 +1,49 @@
+<div class="container text-center break-text">
+    <h3><br></h3>
+    <h3>{{project.title}}</h3>
+    <h3><br></h3>
+    <p><br></p>
+    <div [innerHTML]="project.content"></div>
+    <p><br></p>
+    <p>Last updated: {{project.lastUpdated}}</p>
+    <p><br></p>
+    <div *ngIf="showAddComment; else showSignin">
+        <div style="width: 80%; margin: auto;">
+            <h5>Add Comment</h5>
+            <div class="submit-form">
+                <div *ngIf="!submitted">
+                <div class="form-group">
+                    <textarea
+                        type="text"
+                        class="form-control"
+                        id="content"
+                        required
+                        [(ngModel)]="comment.content"
+                        name="content">
+                    </textarea>
+                </div>
+                <button (click)="saveComment()" class="btn btn-success">Submit Comment</button>
+                </div>
+                <div *ngIf="submitted">
+                <p>Submitted!</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <p><br></p>
+    <ng-template #showSignin>
+        <p><b>Sign up and signin to leave comment.</b></p>
+    </ng-template>
+    <hr>
+    <h5><u>Comments</u></h5>
+    <p><br></p>
+    <div *ngFor="let c of project.comments">
+        <div style="border-width:1px; border-style:solid; border-color:#48494a">
+            <p><u>{{c.username}}: {{c.datePosted}}</u></p>
+            <p>{{c.content}}</p>
+        </div>
+        <p><br></p>
+    </div>
+    <p><br></p>
+    <p><br></p>
+</div>

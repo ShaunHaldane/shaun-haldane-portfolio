@@ -1,0 +1,5 @@
+package com.shaunhaldane.shaunhaldanebloginitializr.response;
+
+public class JwtResponse {
+
+}

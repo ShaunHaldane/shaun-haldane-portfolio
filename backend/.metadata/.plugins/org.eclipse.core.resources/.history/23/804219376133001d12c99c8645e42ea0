@@ -1,0 +1,7 @@
+package com.shaunhaldane.shaunhaldanebloginitializr.service;
+
+public class AdminService {
+
+	@Autowire
+	PostRepository
+}

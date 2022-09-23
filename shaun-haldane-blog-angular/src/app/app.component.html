@@ -1,0 +1,48 @@
+<div id="app">
+  <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a href="#" class="navbar-brand">Shaun Haldane</a>
+    <ul class="navbar-nav mr-auto" routerLinkActive="active">
+      <li class="nav-item">
+        <a href="/home" class="nav-link" routerLink="home">About me</a>
+      </li>
+      <li class="nav-item">
+        <a href="/projects" class="nav-link" routerLink="projects">Projects</a>
+      </li>
+      <li class="nav-item">
+        <a href="/posts" class="nav-link" routerLink="posts">Articles</a>
+      </li>
+      <li class="nav-item" *ngIf="showAddPost">
+        <a href="/add-project" class="btn btn-light ml-2 mr-2" routerLink="add-project">Add Project</a>
+      </li>
+      <li class="nav-item" *ngIf="showAddPost">
+        <a href="/add-post" class="btn btn-light ml-2 mr-2" routerLink="add-post">Add Article</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto" *ngIf="!isLoggedIn">
+      <li class="nav-item">
+        <a href="/register" class="nav-link" routerLink="register">Sign Up</a>
+      </li>
+      <li class="nav-item">
+        <a href="/login" class="nav-link" routerLink="login">Login</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto" *ngIf="isLoggedIn">
+      <li class="nav-item">
+        <a href="/posts" class="nav-link" routerLink="posts">{{ username }}</a>
+      </li>
+      <li class="nav-item">
+        <a href class="nav-link" (click)="logout()">LogOut</a>
+      </li>
+    </ul>
+  </nav>
+  <div class="container">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+<div class = "text-center">
+  <footer class = "footer">
+     <span>Shaun Haldane. 2022. All Rights Reserved. </span>
+     <a href="/privacy-policy" routerLink="privacy-policy" style="color: #9FA6B2"><span> Privacy Policy.</span></a>
+  </footer>
+</div>

@@ -9,14 +9,14 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class AddPostComponent implements OnInit {
 
-  d = new Date()
-  date = this.d.getDate() + '/' + this.d.getMonth() + '/' + this.d.getFullYear() 
+  // date = new Date();
+  // lastUpdated =  this.date.getFullYear() + '-' + ('0' + (this.date.getMonth()+1)).slice(-2)  + '-' + ('0' + this.date.getDate()).slice(-2)
 
   submitted = false
   post = {
     title: '',
-    content: '',
-    lastUpdated: this.date
+    content: ''
+    // lastUpdated: this.lastUpdated
   }
 
   constructor(

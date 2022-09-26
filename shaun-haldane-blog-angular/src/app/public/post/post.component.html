@@ -4,7 +4,7 @@
     <h3><br></h3>
     <div [innerHTML]="post.content"></div>
     <p><br></p>
-    <p>Last updated: {{post.lastUpdated}}</p>
+    <p>Last updated: {{post.lastUpdated | date: 'dd/MM/yyyy'}}</p>
     <p><br></p>
     <div *ngIf="showAddComment; else showSignin">
         <div style="width: 80%; margin: auto;">
@@ -38,7 +38,7 @@
     <p><br></p>
     <div *ngFor="let c of post.comments">
         <div style="border-width:1px; border-style:solid; border-color:#48494a">
-            <p><u>{{c.username}}: {{c.datePosted}}</u></p>
+            <p><u>{{c.username}}: {{c.datePosted | date: 'dd/MM/yyyy'}}</u></p>
             <p>{{c.content}}</p>
         </div>
         <p><br></p>

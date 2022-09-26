@@ -9,16 +9,16 @@ import { AdminService } from 'src/app/services/admin.service';
 })
 export class AddProjectComponent implements OnInit {
 
-  d = new Date()
-  date = this.d.getDate() + '/' + this.d.getMonth() + '/' + this.d.getFullYear() 
+  // date = new Date();
+  // lastUpdated =  this.date.getFullYear() + '-' + ('0' + (this.date.getMonth()+1)).slice(-2)  + '-' + ('0' + this.date.getDate()).slice(-2)
 
   submitted = false
   project = {
     title: '',
     imageUrl: '',
     content: '',
-    link: '',
-    lastUpdated: this.date
+    link: ''
+    // lastUpdated: this.lastUpdated
   }
 
   constructor(

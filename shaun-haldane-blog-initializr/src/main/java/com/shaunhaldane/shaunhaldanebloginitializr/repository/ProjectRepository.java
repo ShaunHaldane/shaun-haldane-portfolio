@@ -1,6 +1,9 @@
 package com.shaunhaldane.shaunhaldanebloginitializr.repository;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.shaunhaldane.shaunhaldanebloginitializr.entity.Project;
@@ -8,6 +11,9 @@ import com.shaunhaldane.shaunhaldanebloginitializr.entity.Project;
 @Repository
 public interface ProjectRepository extends JpaRepository<Project, Long>{
 
+	@Query("SELECT p from Project p ORDER BY p.lastUpdated DESC")
+	List<Project> findAll();
+	
 	Project findById(long id);
 
 }

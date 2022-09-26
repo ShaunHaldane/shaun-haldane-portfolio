@@ -11,7 +11,7 @@
         <a class="mr-4 btn btn-light" href="{{p.link}}" target="_blank">Project Link</a>
         <a class="ml-4 btn btn-light" href="/projects/{{p.id}}" routerLink="/projects/{{p.id}}">More Details</a>
         <br>
-        <p><i>Posted: {{p.lastUpdated}}</i></p>
+        <p><i>Posted: {{p.lastUpdated | date: 'dd/MM/yyyy'}}</i></p>
         <div *ngIf="showAdmin">
             <a class="btn btn-warning mr-1" href="/edit-project/{{p.id}}" routerLink="/edit-project/{{p.id}}">Edit</a>
             <button class="btn btn-danger ml-1" (click)="deleteProject(p.id)">Delete</button>

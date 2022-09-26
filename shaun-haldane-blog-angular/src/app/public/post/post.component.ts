@@ -11,14 +11,13 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class PostComponent implements OnInit {
 
-  d = new Date()
-  date = this.d.getDate() + '/' + this.d.getMonth() + '/' + this.d.getFullYear() 
+  date = new Date();
+  lastUpdated =  this.date.getFullYear() + '-' + ('0' + (this.date.getMonth()+1)).slice(-2)  + '-' + ('0' + this.date.getDate()).slice(-2)
   submitted = false
 
   comment = {
     content: '',
-    datePosted: this.date,
-
+    datePosted: this.lastUpdated,
   }
 
   post: any

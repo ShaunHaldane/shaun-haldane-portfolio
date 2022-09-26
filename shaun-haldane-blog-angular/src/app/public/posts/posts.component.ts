@@ -26,6 +26,7 @@ export class PostsComponent implements OnInit {
     this.publicService.getPosts().subscribe(
       data => {
         this.posts = data;
+        
       },
       err => {
         console.log(err)

@@ -31,7 +31,7 @@ public class PublicController {
 	}
 	
 	@GetMapping("/posts/{id}")
-	public Post getPost(@PathVariable("id") int id) {
+	public Post getPost(@PathVariable("id") long id) {
 		return postRepository.findById(id);
 	}
 	
@@ -41,7 +41,7 @@ public class PublicController {
 	}
 	
 	@GetMapping("/projects/{id}")
-	public Project getProject(@PathVariable("id") int id) {
+	public Project getProject(@PathVariable("id") long id) {
 		return projectRepository.findById(id);
 	}
 }

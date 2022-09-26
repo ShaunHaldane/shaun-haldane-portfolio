@@ -12,7 +12,7 @@ import { UserService } from 'src/app/services/user.service';
 export class ProjectComponent implements OnInit {
 
   d = new Date()
-  date = this.d.getDate() + '/' + this.d.getMonth() + '/' + this.d.getFullYear() 
+  date = this.d.getDate() + '/' + this.d.getMonth() + 1 + '/' + this.d.getFullYear() 
   submitted = false
 
   comment = {

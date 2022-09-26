@@ -5,11 +5,11 @@
     <div *ngFor="let p of posts">
         <h5>{{p.title}}</h5>
         <p><br></p>
-        <p><i>Posted: {{p.lastUpdated}}</i></p>
+        <p><i>Posted: {{p.lastUpdated | date: 'dd/MM/yyyy'}}</i></p>
         <a href="/posts/{{p.id}}" routerLink="/posts/{{p.id}}">Read Post</a>
         <div *ngIf="showAdmin">
             <p><br></p>
-            <a class="btn btn-warning mr-1" href="/edit-post/{{p.id}}" routerLink="/edit-post/{{p.id}}" >Edit</a>
+            <a class="btn btn-warning mr-1" href="/edit-post/{{p.id}}" routerLink="/edit-post/{{p.id}}">Edit</a>
             <button class="btn btn-danger ml-1" (click)="deletePost(p.id)">Delete</button>
         </div>
         <h5><br></h5>

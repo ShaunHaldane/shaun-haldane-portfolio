@@ -1,5 +1,0 @@
-package com.shaunhaldane.shaunhaldanebloginitializr.exception;
-
-public class GlobalExceptionHandler {
-
-}

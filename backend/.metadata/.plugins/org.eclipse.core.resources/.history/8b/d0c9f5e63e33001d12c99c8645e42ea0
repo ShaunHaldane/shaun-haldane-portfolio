@@ -1,5 +1,0 @@
-package com.shaunhaldane.shaunhaldanebloginitializr.payload.response;
-
-public class MessageResponse {
-
-}

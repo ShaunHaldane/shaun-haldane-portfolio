@@ -38,7 +38,7 @@ public class UserController {
 	private UserDetailsServiceImpl userService;
 	
 	// Add new comment to post
-	@PostMapping("/add-comment/{postId}")
+	@PostMapping("/add-comment-post/{postId}")
 	public String addNewCommentToPost(@Valid @PathVariable("postId") long postId, 
 			@RequestBody Comment comment) {
 		Post post = postRepository.findById(postId);
@@ -53,7 +53,7 @@ public class UserController {
 	}
 	
 	// Add new comment to project
-	@PostMapping("/add-comment/{projectId}")
+	@PostMapping("/add-comment-project/{projectId}")
 	public String addNewCommentToProject(@Valid @PathVariable("projectId") long projectId, 
 			@RequestBody Comment comment) {
 		Project project = projectRepository.findById(projectId);

@@ -1,5 +1,0 @@
-package com.shaunhaldane.shaunhaldanebloginitializr.jwt;
-
-public class AuthTokenFilter {
-
-}

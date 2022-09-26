@@ -13,6 +13,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
 
 import com.shaunhaldane.shaunhaldanebloginitializr.security.jwt.AuthEntryPointJwt;
 import com.shaunhaldane.shaunhaldanebloginitializr.security.jwt.AuthTokenFilter;
@@ -59,8 +60,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.cors().and().csrf().disable()
 			.exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
 			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-			.authorizeRequests().antMatchers("/api/auth/**").permitAll().and()
+			.authorizeRequests()
+			.antMatchers("/", "/favicon.ico", "/**/*.png", "/**/*.gif", "/**/*.svg", 
+					"/**/*.jpg", "/**/*.html", "/**/*.css", "/**/*.js")
+			.permitAll().and()
+			.authorizeRequests().antMatchers("/api/admin/**").permitAll().and()
 			.authorizeRequests().antMatchers("/api/user/**").permitAll()
+			.antMatchers("/api/auth/**").permitAll()
 			.antMatchers("/api/public/**").permitAll()
 			.anyRequest().authenticated();
 		http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
